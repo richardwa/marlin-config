@@ -4,6 +4,7 @@ config=$1
 
 git submodule foreach --recursive git clean -xfd
 git submodule foreach --recursive git reset --hard
+git submodule update --init --recursive
 
 echo cp -r $config/* $DIR/Marlin
 cp -r $config/* $DIR/Marlin
