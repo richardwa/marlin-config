@@ -6,7 +6,6 @@ git submodule foreach --recursive git clean -xfd
 git submodule foreach --recursive git reset --hard 4db68d704f560d8450bfb4d1ee3127b34623c319
 
 cp -r -p $config/* $DIR/Marlin
-cp -p $DIR/platformio.ini $DIR/Marlin
 
 pwd=`pwd`
 cd $DIR/Marlin
