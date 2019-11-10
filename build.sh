@@ -12,5 +12,5 @@ cp -p $DIR/upload.py $DIR/Marlin
 
 pwd=`pwd`
 cd $DIR/Marlin
-pio run -e `cat board.txt`
+pio run -e LPC1768
 cd $pwd
