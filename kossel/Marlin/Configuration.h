@@ -1335,8 +1335,8 @@
 #else
 //#define AUTO_BED_LEVELING_LINEAR
   //#define AUTO_BED_LEVELING_BILINEAR
-//#define AUTO_BED_LEVELING_UBL
-  #define MESH_BED_LEVELING
+  #define AUTO_BED_LEVELING_UBL
+  //#define MESH_BED_LEVELING
 #endif
 
 /**
