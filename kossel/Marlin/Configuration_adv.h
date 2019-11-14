@@ -355,7 +355,7 @@
 #define CHAMBER_AUTO_FAN_PIN -1
 
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
-#define EXTRUDER_AUTO_FAN_SPEED 255   // 255 == full speed
+#define EXTRUDER_AUTO_FAN_SPEED 128   // 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 255
 
@@ -1978,9 +1978,9 @@
    * Use Trinamic's ultra quiet stepping mode.
    * When disabled, Marlin will use spreadCycle stepping mode.
    */
-  #define STEALTHCHOP_XY
-  #define STEALTHCHOP_Z
-  #define STEALTHCHOP_E
+  // #define STEALTHCHOP_XY
+  // #define STEALTHCHOP_Z
+  // #define STEALTHCHOP_E
 
   /**
    * Optimize spreadCycle chopper parameters by using predefined parameter sets
