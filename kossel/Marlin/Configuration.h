@@ -854,11 +854,11 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 80, 80, 80, 20 }
+#define DEFAULT_MAX_FEEDRATE          { 100, 100, 100, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 80, 80, 80, 20 }
+  #define MAX_FEEDRATE_EDIT_VALUES    { 100, 100, 100, 25 }
 #endif
 
 /**
@@ -896,7 +896,7 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK  3.0
+  #define DEFAULT_XJERK  5.0
   #define DEFAULT_YJERK  DEFAULT_XJERK
   #define DEFAULT_ZJERK  DEFAULT_XJERK // Must be same as XY for delta
 
@@ -906,7 +906,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    3.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
