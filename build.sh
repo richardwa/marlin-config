@@ -7,6 +7,9 @@ git submodule foreach --recursive git reset --hard 4db68d704f560d8450bfb4d1ee312
 
 cp -r -p $config/* $DIR/Marlin
 
+# to see diff with example delta
+cp -r -p $config/Marlin/* $DIR/Marlin/config/examples/delta/Anycubic/Kossel
+
 pwd=`pwd`
 cd $DIR/Marlin
 pio run -e LPC1768
