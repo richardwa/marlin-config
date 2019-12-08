@@ -1356,7 +1356,7 @@
 //#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
-  //#define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
+  #define LIN_ADVANCE_K 0.10    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
 #endif
 
@@ -1484,7 +1484,7 @@
  *
  * Override the default value based on the driver type set in Configuration.h.
  */
-//#define MINIMUM_STEPPER_PULSE 2
+#define MINIMUM_STEPPER_PULSE 1
 
 /**
  * Maximum stepping rate (in Hz) the stepper driver allows
@@ -1514,16 +1514,16 @@
 // The number of linear motions that can be in the plan at any give time.
 // THE BLOCK_BUFFER_SIZE NEEDS TO BE A POWER OF 2 (e.g. 8, 16, 32) because shifts and ors are used to do the ring-buffering.
 #if ENABLED(SDSUPPORT)
-  #define BLOCK_BUFFER_SIZE 16 // SD,LCD,Buttons take more memory, block buffer needs to be smaller
+  #define BLOCK_BUFFER_SIZE 32 // SD,LCD,Buttons take more memory, block buffer needs to be smaller
 #else
-  #define BLOCK_BUFFER_SIZE 16 // maximize block buffer
+  #define BLOCK_BUFFER_SIZE 32 // maximize block buffer
 #endif
 
 // @section serial
 
 // The ASCII buffer for serial input
 #define MAX_CMD_SIZE 96
-#define BUFSIZE 4
+#define BUFSIZE 32
 
 // Transmission to Host Buffer Size
 // To save 386 bytes of PROGMEM (and TX_BUFFER_SIZE+3 bytes of RAM) set to 0.
@@ -1821,91 +1821,91 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
-    #define X_CURRENT    1000  // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT    750  // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_MICROSTEPS   16  // 0..256
     #define X_RSENSE     0.11
     #define X_CHAIN_POS    -1  // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
   #endif
 
   #if AXIS_IS_TMC(X2)
-    #define X2_CURRENT    1000
+    #define X2_CURRENT    750
     #define X2_MICROSTEPS  16
     #define X2_RSENSE    0.11
     #define X2_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT     1000
+    #define Y_CURRENT     750
     #define Y_MICROSTEPS   16
     #define Y_RSENSE     0.11
     #define Y_CHAIN_POS    -1
   #endif
 
   #if AXIS_IS_TMC(Y2)
-    #define Y2_CURRENT    1000
+    #define Y2_CURRENT    750
     #define Y2_MICROSTEPS  16
     #define Y2_RSENSE    0.11
     #define Y2_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT     1000
+    #define Z_CURRENT     750
     #define Z_MICROSTEPS   16
     #define Z_RSENSE     0.11
     #define Z_CHAIN_POS    -1
   #endif
 
   #if AXIS_IS_TMC(Z2)
-    #define Z2_CURRENT    1000
+    #define Z2_CURRENT    750
     #define Z2_MICROSTEPS  16
     #define Z2_RSENSE    0.11
     #define Z2_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(Z3)
-    #define Z3_CURRENT    1000
+    #define Z3_CURRENT    750
     #define Z3_MICROSTEPS  16
     #define Z3_RSENSE    0.11
     #define Z3_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT    1000
+    #define E0_CURRENT    750
     #define E0_MICROSTEPS  16
     #define E0_RSENSE    0.11
     #define E0_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(E1)
-    #define E1_CURRENT    1000
+    #define E1_CURRENT    750
     #define E1_MICROSTEPS  16
     #define E1_RSENSE    0.11
     #define E1_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(E2)
-    #define E2_CURRENT    1000
+    #define E2_CURRENT    750
     #define E2_MICROSTEPS  16
     #define E2_RSENSE    0.11
     #define E2_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(E3)
-    #define E3_CURRENT    1000
+    #define E3_CURRENT    750
     #define E3_MICROSTEPS  16
     #define E3_RSENSE    0.11
     #define E3_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(E4)
-    #define E4_CURRENT    1000
+    #define E4_CURRENT    750
     #define E4_MICROSTEPS  16
     #define E4_RSENSE    0.11
     #define E4_CHAIN_POS   -1
   #endif
 
   #if AXIS_IS_TMC(E5)
-    #define E5_CURRENT    1000
+    #define E5_CURRENT    750
     #define E5_MICROSTEPS  16
     #define E5_RSENSE    0.11
     #define E5_CHAIN_POS   -1
