@@ -4,4 +4,5 @@ config for printer setup
 - tmc2130 drivers
 - 2004 character lcd
 - 12V system
+- heated bed off
 
