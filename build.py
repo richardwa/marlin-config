@@ -18,5 +18,5 @@ os.system(
 pwd = os.getcwd()
 os.chdir(os.path.join(DIR, "Marlin"))
 # for Windows add pio to path: %USERPROFILE%\.platformio\penv\Scripts
-# os.system('pio run -e LPC1768')
+os.system('pio run -e LPC1768')
 os.chdir(pwd)
