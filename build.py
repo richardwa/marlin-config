@@ -2,7 +2,6 @@ import os
 import sys
 import argparse
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument('config', default='kossel',
                     nargs='*', help='folder to build')
