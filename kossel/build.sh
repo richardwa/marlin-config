@@ -9,7 +9,7 @@ if [ ! -f "$MARLIN_VERSION.zip" ]; then
 fi
 
 # rm -rf Marlin-$MARLIN_VERSION # clean
-unzip $MARLIN_VERSION.zip
+unzip -o $MARLIN_VERSION.zip
 cd Marlin-$MARLIN_VERSION
 cp -r -p $DIR/Marlin/* Marlin
 pio run -e LPC1768
