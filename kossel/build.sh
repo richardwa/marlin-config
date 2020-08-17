@@ -1,11 +1,16 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 pwd=`pwd`
-cd ../Marlin
+cd ../target
 
-git submodule foreach --recursive git clean -xfd
-git submodule foreach --recursive git reset --hard d6e767e36be5852a32526c08d9ade974b18f6546
+MARLIN_VERSION=2.0.4.4
+if [ ! -f "$MARLIN_VERSION.zip" ]; then
+  wget https://github.com/MarlinFirmware/Marlin/archive/$MARLIN_VERSION.zip
+fi
 
+# rm -rf Marlin-$MARLIN_VERSION # clean
+unzip $MARLIN_VERSION.zip
+cd Marlin-$MARLIN_VERSION
 cp -r -p $DIR/Marlin/* Marlin
 pio run -e LPC1768
 cd $pwd
