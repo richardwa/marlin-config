@@ -1206,7 +1206,7 @@
  * - AUTO_BED_LEVELING_3POINT
  *   Probe 3 arbitrary points on the bed (that aren't collinear)
  *   You specify the XY coordinates of all 3 points.
- *   The result is a single tilted plane. Best for a flat bed.
+ *   The result is a single tilted plane. Best for a flat bed. 
  *
  * - AUTO_BED_LEVELING_LINEAR
  *   Probe several points in a grid.
@@ -1339,7 +1339,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-#define LCD_BED_LEVELING
+//#define LCD_BED_LEVELING
 
 #if ENABLED(LCD_BED_LEVELING)
   #define MESH_EDIT_Z_STEP  0.025 // (mm) Step size while manually probing Z axis.
