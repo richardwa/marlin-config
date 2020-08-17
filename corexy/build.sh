@@ -1,7 +1,8 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 pwd=`pwd`
-cd ../target
+mkdir -p $DIR/../target
+cd $DIR/../target
 
 MARLIN_VERSION=2.0.6
 if [ ! -f "$MARLIN_VERSION.zip" ]; then
