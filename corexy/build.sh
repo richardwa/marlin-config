@@ -13,10 +13,8 @@ fi
 # rm -rf Marlin-$MARLIN_VERSION 
 # unzip -o $MARLIN_VERSION.zip
 
-
 cd Marlin-$MARLIN_VERSION
 cp -r -p $DIR/Marlin/* Marlin
 pio run -e LPC1768
 cp .pio/build/LPC1768/firmware.bin $DIR
-scp $DIR/firmware.bin rich@silverhawk:~/marlin-config/corexy/
 cd $pwd
