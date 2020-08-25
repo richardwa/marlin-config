@@ -8,10 +8,10 @@ ssh -T pi@octopi <<EOF
 EOF
 
 # restart board
-# gcode_command=M997
-# octoprint_key=E01B67DAC70E45FB87F33CE3CC0CF803
-# curl -d "{\"command\":\"${gcode_command}\"}" \
-#   -H 'Content-type: application/json' \
-#   -H "X-Api-Key: ${octoprint_key}" \
-#   -s "http://octopi.a.net/api/printer/command"
+gcode_command=M997
+octoprint_key=E01B67DAC70E45FB87F33CE3CC0CF803
+curl -d "{\"command\":\"${gcode_command}\"}" \
+  -H 'Content-type: application/json' \
+  -H "X-Api-Key: ${octoprint_key}" \
+  -s "http://octopi.a.net/api/printer/command"
 
