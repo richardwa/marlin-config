@@ -1,0 +1,23 @@
+;; Start GCODE
+
+G28 ; home all axes
+M420 S1; use leveling data
+
+M211 S0; disable soft endstops
+G1 X310 Y0 Z0 F3600; move out of the way
+M211 S1; enable soft endstops
+
+M109 S[first_layer_temperature]; set temp and wait
+G92 E0; zero extruder
+G1 E2 F2400; extrude some
+G1 X290 E2 F2400; extrude some while moving
+
+
+;; Stop GCODE
+M104 S0                ;turn off temperature
+G91                        ;relative positioning
+G1 E-1 F300          ;retract the filament a bit before lifting the nozzle, to release some of the pressure
+G1 Z+1 E-1 F300  ;move Z up a bit and retract filament even more
+G28 X0 Y0             ;move X/Y to min endstops, so the head is out of the way
+M84                       ;steppers off
+G90                        ;absolute positioning
