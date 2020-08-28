@@ -4,12 +4,12 @@ G28 ; home all axes
 M420 S1; use leveling data
 
 M211 S0; disable soft endstops
-G1 X310 Y0 Z0 F3600; move out of the way
+G1 X310 Y0 Z20 F3600; move out of the way
 M211 S1; enable soft endstops
 
 M109 S[first_layer_temperature]; set temp and wait
 G92 E0; zero extruder
-G1 E2 F2400; extrude some
+G1 E2 Z0 F2400; extrude some
 G1 X290 E2 F2400; extrude some while moving
 
 
