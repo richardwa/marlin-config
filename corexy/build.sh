@@ -4,14 +4,11 @@ pwd=`pwd`
 mkdir -p $DIR/../target
 cd $DIR/../target
 
-MARLIN_VERSION=2.0.6
+MARLIN_VERSION=2.0.6.1
 if [ ! -f "$MARLIN_VERSION.zip" ]; then
   wget https://github.com/MarlinFirmware/Marlin/archive/$MARLIN_VERSION.zip
+  unzip -o $MARLIN_VERSION.zip
 fi
-
-# clean
-# rm -rf Marlin-$MARLIN_VERSION 
-# unzip -o $MARLIN_VERSION.zip
 
 cd Marlin-$MARLIN_VERSION
 cp -r -p $DIR/Marlin/* Marlin
